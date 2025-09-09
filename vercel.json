@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/resume",
-      "destination": "https://drive.google.com/your-resume-link",
+      "destination": "https://drive.google.com/file/d/1iJOEDPw29h0QH9wcv_HsL_-1-ZfB9paW/view?usp=drive_link",
       "permanent": true
     }
   ]
