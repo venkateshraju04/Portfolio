@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/resume",
+      "destination": "https://drive.google.com/your-resume-link",
+      "permanent": true
+    }
+  ]
+}
