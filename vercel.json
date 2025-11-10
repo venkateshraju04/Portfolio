@@ -4,6 +4,11 @@
       "source": "/resume",
       "destination": "https://drive.google.com/file/d/1xgm7N_OVSzOq7ZCYHZ8HhIBKuMwHmBuL/view?usp=sharing",
       "permanent": true
+    },
+    {
+      "source": "/n8n-backend",
+      "destination": "http://54.82.171.193:5678/workflow/",
+      "permanent": true
     }
   ]
 }
