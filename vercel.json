@@ -2,12 +2,12 @@
   "redirects": [
     {
       "source": "/resume",
-      "destination": "https://drive.google.com/file/d/1jDijrPQlkH07DvD25QDjX_VmCt1DIhp0/view?usp=sharing",
+      "destination": "54.147.58.45",
       "permanent": true
     },
     {
       "source": "/n8n-backend",
-      "destination": "http://54.82.171.193:5678/workflow/",
+      "destination": "https://drive.google.com/file/d/18YjIivV7xKCoQoMIUzSbQzvQl_lLvq4Z/view?usp=sharing",
       "permanent": true
     }
   ]
