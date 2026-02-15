@@ -1,203 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Venkatesh Raju</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venkatesh Raju — Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
 
-    <link rel="stylesheet" href="/style.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-    />
-    <meta
-      name="description"
-      content="Venkatesh Raju's personal portfolio showcasing projects, skills and experience in software development."
-    />
-  </head>
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">VENKATESH RAJU</div>
+      <div class="preloader-bar">
+        <div class="preloader-progress" id="preloaderProgress"></div>
+      </div>
+      <div class="preloader-count" id="preloaderCount">0%</div>
+    </div>
+  </div>
 
-  <body>
-    <main>
-      <img
-        class="pfp"
-        src="/sources/20250507_180844.JPG"
-        alt="Venkatesh Raju"
-      />
-      <h1 class="title-name">hey, i am <a href="/">venkatesh</a>!</h1>
+  <!-- Canvas Background -->
+  <canvas id="bgCanvas"></canvas>
 
-      <section>
-        <p>i am a final year CSE student at RVITM, Bangalore</p>
-        <p>
-          I’m a passionate developer building web applications, ml models and
-          practical software solutions. I also love exploring new PC and
-          smartphone technologies, always curious about the next innovation.
-        </p>
-      </section>
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <a href="#" class="logo" data-cursor="hover">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M16 0L32 32H0L16 0Z" fill="white"/>
+      </svg>
+      <span>VENKATESH RAJU</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#work" class="nav-link" data-cursor="hover"><span data-text="Projects">Projects</span></a>
+      <a href="#about" class="nav-link" data-cursor="hover"><span data-text="About">About</span></a>
+      <a href="#services" class="nav-link" data-cursor="hover"><span data-text="Skills">Skills</span></a>
+      <a href="#contact" class="nav-link" data-cursor="hover"><span data-text="Contact">Contact</span></a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" data-cursor="hover" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+    </button>
+  </header>
 
-      <section class="experience">
-        <h2>experience</h2>
-        <h3>Agentic AI Developer Intern     (Jan 2026 - Present)</h3>
-        <h4>Dscape.Ai Pvt. Ltd.</h4>
-        <p>
-          Assisting in the development of AI agents using n8n.<br>
-          Exploring RAG, ML, NLP etc in real world applications and business use cases.
-        </p>
-      </section>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-nav">
+      <a href="#work" class="mobile-nav-link" data-cursor="hover">Projects</a>
+      <a href="#about" class="mobile-nav-link" data-cursor="hover">About</a>
+      <a href="#services" class="mobile-nav-link" data-cursor="hover">Skills</a>
+      <a href="#contact" class="mobile-nav-link" data-cursor="hover">Contact</a>
+    </nav>
+    <div class="mobile-menu-footer">
+      <a href="https://github.com/venkateshraju04" data-cursor="hover">GitHub</a>
+      <a href="https://linkedin.com/in/nrvr" data-cursor="hover">LinkedIn</a>
+      <a href="https://blog.venkateshraju.me" data-cursor="hover">Blog</a>
+    </div>
+  </div>
 
-      <section class="projects">
-        <h2>projects</h2>
-        <ul>
-          <li>
-            <a href="https://ai-trend-scout.venkateshraju.me">AI Trend Scout</a> :
-            a web app that aggregates trending posts from various sources for
-            developers.
-          </li>
-          <li>
-            <a
-              href="https://github.com/venkateshraju04/Student-Report-Card-Generator"
-              >Report Genie</a
-            >
-            : a tool for generating students' progress reports from an excel
-            sheet.
-          </li>
-          <li>
-            <a href="https://chat-sync.venkateshraju.me">Chat Sync</a> : a full
-            stack chat application.
-          </li>
-          <li>
-            <a href="https://github.com/IlluminatorBlock/Blockchain_Voting"
-              >Blockchain Voting System</a
-            >
-            : a secure and decentralized voting platform using blockchain
-            technology.
-          </li>
-        </ul>
-      </section>
+  <!-- Main Content -->
+  <main class="main" id="main">
 
-      <section class="skills">
-        <h2>skills</h2>
-        <ul>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
-            ,
-            alt="C++"
-          />
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="hero-line" data-animate="slide-up">
+            <span class="hero-line-inner">Venkatesh</span>
+          </span>
+          <span class="hero-line" data-animate="slide-up" data-delay="1">
+            <span class="hero-line-inner">Raju</span>
+          </span>
+          <span class="hero-line hero-line-outline" data-animate="slide-up" data-delay="2">
+            <span class="hero-line-inner">Developer</span>
+          </span>
+        </h1>
+        <div class="hero-subtitle" data-animate="fade-up" data-delay="3">
+          <p>Full-stack developer &amp; AI enthusiast building web apps, automation pipelines, and intelligent systems. Currently interning at Dscape.AI.</p>
+        </div>
+        <div class="hero-cta" data-animate="fade-up" data-delay="4">
+          <a href="#work" class="btn-outline" data-cursor="hover">
+            <span>View Projects</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-scroll" data-animate="fade" data-delay="5">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
 
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-            ,
-            alt="Python"
-          />
+    <!-- Showreel Section -->
+    <section class="showreel" id="showreel">
+      <div class="showreel-wrapper" data-animate="scale-up">
+        <div class="showreel-video">
+          <video autoplay muted loop playsinline>
+            <source src="sources/4782416-hd_1920_1080_30fps.mp4" type="video/mp4" />
+          </video>
+          <div class="showreel-overlay">
+            <a href="https://blog.venkateshraju.me" target="_blank" class="play-btn" data-cursor="hover">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              <span>Read My Blog</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
-            ,
-            alt="Java"
-          />
+    <!-- Work Section -->
+    <section class="work" id="work">
+      <div class="section-header">
+        <span class="section-label" data-animate="fade-up">Selected Work</span>
+        <h2 class="section-title" data-animate="fade-up">Featured Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card project-card-large" data-animate="fade-up">
+          <a href="https://ai-trend-scout.venkateshraju.me" target="_blank" project-link" data-cursor="view">
+            <div class="project-media">
+              <img src="sources/aits.png" alt="AI Trend Scout" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-category">AI &bull; Automation</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">AI Trend Scout</h3>
+              <p class="project-desc">A trends dashboard aggregating top daily posts from GitHub, Reddit, Hacker News, YouTube &amp; Dev.to. Fully automated n8n pipeline on AWS EC2 with Supabase storage and newsletter system.</p>
+            </div>
+          </a>
+        </article>
+        <article class="project-card" data-animate="fade-up" data-delay="1">
+          <a href="https://github.com/venkateshraju04/cisco-forecast-league" target="_blank" class="project-link" data-cursor="view">
+            <div class="project-media">
+              <img src="sources/sales.jpg" alt="Sales Forecasting Tool" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-category">Machine Learning</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">Sales Forecasting Tool</h3>
+              <p class="project-desc">Time-series forecasting model predicting sales for 20 Cisco products. Integrated macroeconomic indicators, achieved 90.46% accuracy, ranked 7th among RV Institutions.</p>
+            </div>
+          </a>
+        </article>
+        <article class="project-card" data-animate="fade-up" data-delay="2">
+          <a href="https://github.com/IlluminatorBlock/PD-Rag" target="_blank" class="project-link" data-cursor="view">
+            <div class="project-media">
+              <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80" alt="NeuroRAG-PD" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-category">AI &bull; Healthcare</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">NeuroRAG-PD</h3>
+              <p class="project-desc">Multi-agent AI system for MRI-based Parkinson's stage prediction using EfficientNet-B0 with 99.62% accuracy and RAG-based diagnostic reports.</p>
+            </div>
+          </a>
+        </article>
+        <article class="project-card project-card-large" data-animate="fade-up">
+          <a href="https://chat-sync.venkateshraju.me" target="_blank" class="project-link" data-cursor="view">
+            <div class="project-media">
+              <img src="sources/chat-sync.png" alt="Chat Sync" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-category">Full Stack &bull; MERN</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">Chat Sync</h3>
+              <p class="project-desc">Real-time chat application built with the MERN stack. Features Socket.io live messaging, JWT authentication, and Cloudinary for media storage and delivery.</p>
+            </div>
+          </a>
+        </article>
+        <article class="project-card" data-animate="fade-up" data-delay="1">
+          <a href="https://github.com/IlluminatorBlock/Blockchain_Voting" target="_blank" class="project-link" data-cursor="view">
+            <div class="project-media">
+              <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80" alt="Blockchain Voting System" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-category">Blockchain &bull; Web3</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3 class="project-title">Blockchain Voting System</h3>
+              <p class="project-desc">Decentralized voting platform built with React, Django, and Ganache ensuring transparent and tamper-proof elections.</p>
+            </div>
+          </a>
+        </article>
+        <article class="project-card" data-animate="fade-up" data-delay="2">
+          <a href="https://blog.venkateshraju.me" target="_blank" class="project-link" data-cursor="view">
+            <div class="project-media">
+              <img src="sources/blog.png" alt="Personal Blog" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-category">Blog &bull; Writing</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">Personal Blog</h3>
+              <p class="project-desc">My personal blogging site where I share thoughts, learnings, and technical deep-dives on software development and AI.</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
 
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
-            ,
-            alt="Node.js"
-          />
+    <!-- Marquee -->
+    <section class="marquee-section">
+      <div class="marquee" data-animate="fade">
+        <div class="marquee-track">
+          <span>React &bull; Node.js &bull; Python &bull; AI / ML &bull; n8n  &bull; MERN Stack &bull; Docker &bull; AWS &bull; C++ &bull; Full Stack Dev &bull;&nbsp;</span>
+          <span>React &bull; Node.js &bull; Python &bull; AI / ML &bull; n8n  &bull; MERN Stack &bull; Docker &bull; AWS &bull; C++ &bull; Full Stack Dev &bull;&nbsp;</span>
+        </div>
+      </div>
+    </section>
 
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-            ,
-            alt="AWS"
-          />
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="about-grid">
+        <div class="about-left">
+          <span class="section-label" data-animate="fade-up">About Me</span>
+          <h2 class="about-title" data-animate="fade-up">Building at the intersection of code &amp; intelligence</h2>
+        </div>
+        <div class="about-right">
+          <p class="about-text" data-animate="fade-up">I'm a final-year Computer Science student at RV Institute of Technology and Management, Bangalore (CGPA: 8.86). Currently interning at Dscape.AI as an Agentic AI Developer, working on AI automation pipelines, RAG systems, and action-based agents.</p>
+          <p class="about-text" data-animate="fade-up" data-delay="1">I love building full-stack applications, experimenting with machine learning, and automating workflows. From MERN stack apps to time-series forecasting models, I enjoy solving real-world problems with clean, efficient code.</p>
+          <div class="about-stats" data-animate="fade-up" data-delay="2">
+            <div class="stat">
+              <span class="stat-number" data-count="10">0</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-count="250">0</span>
+              <span class="stat-label">DSA Problems Solved</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-count="8.8">0</span>
+              <span class="stat-label">CGPA</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-count="3">0</span>
+              <span class="stat-label">Research Papers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-            ,
-            alt="JavaScript"
-          />
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="section-header">
+        <span class="section-label" data-animate="fade-up">What I Do</span>
+        <h2 class="section-title" data-animate="fade-up">Skills &amp; Expertise</h2>
+      </div>
+      <div class="services-list">
+        <div class="service-item" data-animate="fade-up" data-cursor="hover">
+          <span class="service-number">01</span>
+          <h3 class="service-title">Full-Stack Development</h3>
+          <p class="service-desc">Building responsive web applications using React, Node.js, Express.js, MongoDB, TailwindCSS, and modern JavaScript.</p>
+        </div>
+        <div class="service-item" data-animate="fade-up" data-delay="1" data-cursor="hover">
+          <span class="service-number">02</span>
+          <h3 class="service-title">AI &amp; Machine Learning</h3>
+          <p class="service-desc">Developing intelligent systems using Python, RAG pipelines, NLP, EfficientNet, FAISS, Scikit-learn, and multi-agent architectures.</p>
+        </div>
+        <div class="service-item" data-animate="fade-up" data-delay="2" data-cursor="hover">
+          <span class="service-number">03</span>
+          <h3 class="service-title">Automation &amp; DevOps</h3>
+          <p class="service-desc">Designing automated workflows with n8n, deploying on AWS EC2, Docker containerization, and CI/CD with Vercel.</p>
+        </div>
+        <div class="service-item" data-animate="fade-up" data-delay="3" data-cursor="hover">
+          <span class="service-number">04</span>
+          <h3 class="service-title">Problem Solving</h3>
+          <p class="service-desc">250+ DSA problems solved on LeetCode using C++. Strong foundations in data structures, algorithms, and system design.</p>
+        </div>
+      </div>
+    </section>
 
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-            ,
-            alt="React"
-          />
+    <!-- Tech Stack Section -->
+    <section class="clients" id="clients">
+      <div class="section-header">
+        <span class="section-label" data-animate="fade-up">Tech Stack</span>
+        <h2 class="section-title" data-animate="fade-up">Tools I Use</h2>
+      </div>
+      <div class="clients-grid" data-animate="fade-up">
+        <div class="client-item" data-cursor="hover">React</div>
+        <div class="client-item" data-cursor="hover">Node.js</div>
+        <div class="client-item" data-cursor="hover">Python</div>
+        <div class="client-item" data-cursor="hover">C++</div>
+        <div class="client-item" data-cursor="hover">MongoDB</div>
+        <div class="client-item" data-cursor="hover">AWS</div>
+        <div class="client-item" data-cursor="hover">Docker</div>
+        <div class="client-item" data-cursor="hover">Git</div>
+        <div class="client-item" data-cursor="hover">n8n</div>
+        <div class="client-item" data-cursor="hover">Supabase</div>
+        <div class="client-item" data-cursor="hover">Vercel</div>
+        <div class="client-item" data-cursor="hover">Linux</div>
+      </div>
+    </section>
 
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"
-            ,
-            alt="Express"
-          />
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <span class="section-label" data-animate="fade-up">Get in Touch</span>
+        <h2 class="contact-title" data-animate="fade-up">
+          Let's build<br />something<br /><span class="text-outline">together</span>
+        </h2>
+        <a href="mailto:me@venkateshraju.me" class="contact-email" data-animate="fade-up" data-cursor="hover">me@venkateshraju.me</a>
+        <div class="contact-social" data-animate="fade-up">
+          <a href="https://github.com/venkateshraju04" target="_blank" class="social-link" data-cursor="hover">GitHub</a>
+          <a href="https://linkedin.com/in/nrvr" target="_blank" class="social-link" data-cursor="hover">LinkedIn</a>
+          <a href="https://blog.venkateshraju.me" target="_blank" class="social-link" data-cursor="hover">Blog</a>
+        </div>
+      </div>
+    </section>
 
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg"
-            ,
-            alt="PostgreSQL"
-          />
-
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg"
-            ,
-            alt="MongoDB"
-          />
-
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original-wordmark.svg"
-            ,
-            alt="Git"
-          />
-
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg"
-            ,
-            alt="Docker"
-          />
-
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original-wordmark.svg"
-            ,
-            alt="Vercel"
-          />
-
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"
-            ,
-            alt="Postman"
-          />
-        </ul>
-      </section>
-
-      <section>
-        <h2>Socials</h2>
-        <ul>
-          <li>
-            <a href="https://linkedin.com/in/venkateshraju04" target="_blank"
-              >LinkedIn</a
-            >
-          </li>
-          <li>
-            <a href="mailto:venkateshraju290204@gmail.com" target="_blank"
-              >Mail</a
-            >
-          </li>
-          <li>
-            <a href="https://github.com/venkateshraju04" target="_blank"
-              >GitHub</a
-            >
-          </li>
-          <li>
-            <a href="https://leetcode.com/venkateshraju04" target="_blank"
-              >LeetCode</a
-            >
-          </li>
-        </ul>
-      </section>
-      <p text-align="center" class="inspired">
-        Inspired from
-        <a href="https://latex.vercel.app" target="_blank">Latex.css</a>
-      </p>
-    </main>
-    <footer>
-      <a href="https://github.com/venkateshraju04" target="_blank">GitHub</a> |
-      <a href="https://blog.venkateshraju.me" target="_blank">Blog</a>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-left"><span>&copy; 2026 Venkatesh Raju. All rights reserved.</span></div>
+        <div class="footer-right">
+          <a href="https://github.com/venkateshraju04" target="_blank" data-cursor="hover">GitHub</a>
+          <a href="https://linkedin.com/in/nrvr" target="_blank" data-cursor="hover">LinkedIn</a>
+        </div>
+      </div>
     </footer>
-  </body>
-</html>
+  </main>
 
+  <script src="app.js"></script>
+</body>
+</html>
