@@ -936,6 +936,101 @@ img, video {
   font-weight: 300;
 }
 
+/* ---------- Experience ---------- */
+.experience {
+  padding: 120px 0;
+}
+
+.experience-list {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.experience-item {
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+}
+
+.experience-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.experience-header {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.experience-date {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.experience-role {
+  font-family: var(--font-primary);
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 600;
+  margin-bottom: 6px;
+  transition: color 0.3s;
+}
+
+.experience-item:hover .experience-role {
+  color: var(--text-muted);
+}
+
+.experience-company {
+  font-size: 15px;
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.experience-details {
+  padding-left: 240px;
+}
+
+.experience-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.experience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.experience-tag {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.experience-item:hover .experience-tag {
+  color: var(--text-muted);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
 /* ---------- Clients ---------- */
 .clients {
   padding: 120px 0;
@@ -943,8 +1038,8 @@ img, video {
 
 .clients-grid {
   max-width: 1400px;
+  width: calc(100% - 80px);
   margin: 0 auto;
-  padding: 0 40px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
@@ -1191,9 +1286,22 @@ img, video {
     padding-left: 0;
   }
 
+  .experience-list {
+    padding: 0 24px;
+  }
+
+  .experience-header {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .experience-details {
+    padding-left: 0;
+  }
+
   .clients-grid {
     grid-template-columns: repeat(2, 1fr);
-    padding: 0 24px;
+    width: calc(100% - 48px);
   }
 
   .client-item {
